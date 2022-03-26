@@ -11,10 +11,7 @@ class Solution:
                 return None
             root.left=rec(root.left)
             root.right=rec(root.right)
-            if root.val==target:
-                if not root.left and not root.right:
-                    return None
-
-            
+            if not root.left and not root.right and root.val==target:
+                return None
             return root
         return rec(root)
