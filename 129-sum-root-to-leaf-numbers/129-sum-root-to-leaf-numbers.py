@@ -7,18 +7,18 @@
 class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         arr = []
+        global s
+        s = 0
         def dfs(temp,path):
+            global s
             if temp==None:
                 return
             if not temp.left and not temp.right:
-                arr.append(path+str(temp.val))
+                s += int(path+str(temp.val))
                 return
             path += str(temp.val)
             dfs(temp.left,path)
             dfs(temp.right,path)
         dfs(root,"")
-        s = 0
-        for i in arr:
-            s += int(i)
         return s
             
