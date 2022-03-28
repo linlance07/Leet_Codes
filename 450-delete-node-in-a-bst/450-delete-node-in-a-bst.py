@@ -1,38 +1,29 @@
 # Definition for a binary tree node.
-# class TreeNode(object):
+# class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution(object):
-    def deleteNode(self, root, key):
-        def ino(r):
-            if not r or not r.left:
-                return r
-            else:
-                return ino(r.left)
-        def dell(r,v):
-            if not r:
+class Solution:
+    def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
+        def inord(temp):
+            if temp and temp.left:
+                return inord(temp.left)
+            return temp
+        def delete(temp,key):
+            if temp==None:
                 return None
-            if v>r.val:
-                r.right=dell(r.right,v)
-            elif v<r.val:
-                r.left=dell(r.left,v)
+            if key<temp.val:
+                temp.left = delete(temp.left,key)
+            elif key>temp.val:
+                temp.right = delete(temp.right,key)
             else:
-                if r.right==None:
-                    t=r.left
-                    r=None
-                    return t
-                if r.left==None:
-                    t=r.right
-                    r=None
-                    return t
-                t=ino(r.right)
-                r.val=t.val
-                r.right=dell(r.right,r.val)
-            return r
-        return dell(root,key)
-                
-                    
-                
-                
+                if not temp.left:
+                    return temp.right
+                if not temp.right:
+                    return temp.left
+                inord_success =  inord(temp.right)
+                temp.val = inord_success.val
+                temp.right = delete(temp.right,inord_success.val)
+            return temp  
+        return delete(root,key)
