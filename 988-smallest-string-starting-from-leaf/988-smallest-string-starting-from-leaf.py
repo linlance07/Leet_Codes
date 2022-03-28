@@ -14,12 +14,12 @@ class Solution:
                 return
             if temp.left==None and temp.right==None:
                 if s=="":
-                    s = (path + chr(temp.val+97))[::-1]
+                    s = (chr(temp.val+97)+path)
                 else:
-                    if (path + chr(temp.val+97))[::-1]<s:
-                        s = (path + chr(temp.val+97))[::-1]
+                    if (chr(temp.val+97)+path)<s:
+                        s = (chr(temp.val+97)+path)
                 return
-            path += chr(temp.val+97)
+            path = chr(temp.val+97) + path
             dfs(temp.left,path)
             dfs(temp.right,path)
         dfs(root,"")
