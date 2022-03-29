@@ -15,6 +15,7 @@ class Solution(object):
         intervalsList = []
         for index, item in intervals.items():
             intervalsList.append(item)
+        intervalsList.sort()
         mergedList = self.mergeIntervals(intervalsList)
         return [y - x + 1 for x,y in mergedList]
     
