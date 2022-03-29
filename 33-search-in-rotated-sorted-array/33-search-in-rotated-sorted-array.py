@@ -1,14 +1,20 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        i = 0
-        j = len(nums)-1
-        self.ind = -1
-        def bina(l,r):
-            if l<=r:
-                mid = (l+r)//2
-                if nums[mid]==target:
-                    self.ind = mid
-                bina(l,mid-1) 
-                bina(mid+1,r)
-        bina(i,j)
-        return self.ind
+        l = 0
+        r = len(nums)-1
+        while l<=r:
+            mid = (l+r)//2
+            if nums[mid]==target:
+                return mid
+            if nums[mid]>=nums[l]:
+                if nums[l]<=target<=nums[mid]:
+                    r = mid - 1
+                else:
+                    l = mid + 1
+            else:
+                if nums[mid]<=target<=nums[r]:
+                    l = mid + 1
+                else:
+                    r = mid - 1
+        return -1
+                
