@@ -18,7 +18,7 @@ class Solution:
             elif temp.right:
                 return 1 + dfs(temp.right)
             else:
-                return 0
-        return dfs(root) + 1
+                return 1
+        return dfs(root)
                     
                     
