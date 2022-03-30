@@ -8,7 +8,6 @@ class Solution:
             if root.val==temp.val and sub(root,temp):
                 return True
             return dfs(root.left,temp) or dfs(root.right,temp)
-
         def sub(root,temp):
             if temp==None:
                 return True
@@ -16,6 +15,5 @@ class Solution:
                 return False
             if root.val!=temp.val:
                 return False
-            return sub(root.left,temp.next) or sub(root.right,temp.next)
-                  
+            return sub(root.left,temp.next) or sub(root.right,temp.next)       
         return dfs(root,head)
