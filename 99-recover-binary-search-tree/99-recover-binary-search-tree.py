@@ -12,6 +12,7 @@ class Solution:
         inoval = []
         def inord(temp):
             global ino
+            global inoval
             if temp:
                 inord(temp.left)
                 ino.append(temp)
