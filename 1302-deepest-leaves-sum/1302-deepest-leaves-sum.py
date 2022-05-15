@@ -14,7 +14,7 @@ class Solution:
         def deep(temp,lev):
             if temp==None:
                 return 0
-            if temp.left==None and temp.right==None and lev==depth_val:
+            if lev==depth_val:
                 return temp.val
             return deep(temp.left,lev+1) + deep(temp.right,lev+1)   
         return deep(root,1)
