@@ -5,7 +5,15 @@ class Solution:
     
     #Function to find the minimum element in sorted and rotated array.
     def minNumber(self, arr,low,high):
-        return min(arr)
+        l = 0
+        r = len(arr)-1
+        while l<r:
+            mid = (l+r)//2
+            if arr[mid]<arr[r]:
+                r = mid
+            else:
+                l = l+1
+        return arr[l]
 
 #{ 
 #  Driver Code Starts
