@@ -19,6 +19,7 @@ class Solution:
                 else:
                     if (min(q,_),max(q,_)) not in free:
                         avail += 1
+                        free.add((min(q,_),max(q,_)))
         count = 0
         for x in range(n):
             if node[x]:
@@ -26,7 +27,6 @@ class Solution:
                 dfs(x)
         separate = count - 1
         print(avail,separate)
-        avail //= 2
         if avail>= separate:
             return separate
         return -1
