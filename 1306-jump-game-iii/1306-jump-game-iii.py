@@ -14,11 +14,7 @@ class Solution:
                 l = q - arr[q]
                 r = q + arr[q]
                 if l>=0 and visit[l]:
-                    if arr[l]==0:
-                        return True
                     Q.append(l)
                 if r<len(arr) and visit[r]:
-                    if arr[r]==0:
-                        return True
                     Q.append(r)
         return False
