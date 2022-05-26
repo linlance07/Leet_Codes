@@ -6,14 +6,14 @@ class Solution:
             for j in range(len(i)):
                 G[j].add(i[j])
         #print(G)
-        Q = [(beginWord,1)]
+        Q = deque([(beginWord,1)])
         bag = set(wordList)
         bag.add(beginWord)
         visit = set()
         if endWord not in bag:
             return 0
         while Q:
-            s,c = Q.pop(0)
+            s,c = Q.popleft()
             #print(s)
             if s==endWord:
                 return c
