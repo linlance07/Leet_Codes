@@ -26,7 +26,6 @@ class Solution:
         for j in range(1,rows-1):
             for k in range(1,cols-1):
                 if grid[j][k]==1:
-                    ans += 1
-                    
+                    ans += 1     
         return ans
                     
