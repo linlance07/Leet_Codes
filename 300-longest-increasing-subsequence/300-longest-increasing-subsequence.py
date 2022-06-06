@@ -9,7 +9,7 @@ class Solution:
                     stack.append(i)
                 else:
                     l = 0
-                    r = len(stack)
+                    r = len(stack) - 1
                     while l<r:
                         mid = (l+r)//2
                         if stack[mid]<i:
