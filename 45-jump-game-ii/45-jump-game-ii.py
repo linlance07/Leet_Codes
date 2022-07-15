@@ -6,8 +6,10 @@ class Solution:
         r = nums[0]
         ans = 1
         while r<len(nums)-1:
-            #print(l,r)
-            nxt = max([j+nums[j] for j in range(l,r+1)])
-            l,r = r,nxt
+            maxi = 0
+            for j in range(l,r+1):
+                maxi = max(maxi,j + nums[j])
+            l = r
+            r = maxi
             ans += 1
         return ans
