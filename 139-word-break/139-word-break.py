@@ -30,6 +30,6 @@ class Solution:
             for j in range(i):
                 if dp[j] and search(s[j:i]):
                     dp[i] = True
-                    #break
+                    break
         return dp[-1]
             
