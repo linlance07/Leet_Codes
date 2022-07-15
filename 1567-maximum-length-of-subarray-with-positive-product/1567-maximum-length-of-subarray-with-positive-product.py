@@ -7,9 +7,7 @@ class Solution:
                 pos = neg = 0
             elif nums[i]>0:
                 pos += 1
-                if neg==0:
-                    neg = 0
-                else:
+                if neg:
                     neg += 1
             else:
                 t = pos + 1
