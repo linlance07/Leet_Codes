@@ -12,6 +12,5 @@ class Solution:
                 if (i-1)>=0 and (j+1)<cols:
                     c = matrix[i-1][j+1]
                 matrix[i][j] += min(a,b,c)
-        print(matrix)
         return min(matrix[-1])
             
