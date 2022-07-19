@@ -1,9 +1,5 @@
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
-        if n==1:
-            return [['Q']]
-        if n<=3:
-            return []
         cols = set()
         posd = set()
         negd = set()
