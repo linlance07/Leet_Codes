@@ -18,7 +18,6 @@ class Solution:
         ans = []
         for j in range(len(Q)):
             if visit[Q[j]]==0:
-                dfs(Q[j])
                 ans.append(Q[j])
         return ans
             
