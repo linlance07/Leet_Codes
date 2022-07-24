@@ -8,5 +8,5 @@ class Solution:
         for i in range(n):
             for j in range(n):
                 if i!=j:
-                    ans = max(ans,len(G[i])+len(G[j])-(i in G[j]))
+                    ans = max(ans,len(G[i])+len(G[j])-(j in G[i]))
         return ans
