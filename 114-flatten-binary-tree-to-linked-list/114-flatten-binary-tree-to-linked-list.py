@@ -6,16 +6,15 @@
 #         self.right = right
 class Solution:
     def flatten(self, root: Optional[TreeNode]) -> None:
-        global prev
         prev = None
         def flat(temp):
-            global prev
-            if temp==None:
-                return 
-            flat(temp.right)
-            flat(temp.left)
-            temp.left = None
-            temp.right = prev
-            prev = temp
+            nonlocal prev
+            if temp:
+                flat(temp.right)
+                flat(temp.left)
+                temp.right = prev
+                temp.left = None
+                prev = temp
+            
         flat(root)
         
