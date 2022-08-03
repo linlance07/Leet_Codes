@@ -1,8 +1,6 @@
 class MyCalendar:
-
     def __init__(self):
         self.cal = []
-
     def book(self, start: int, end: int) -> bool:
         for i,j in self.cal:
             if i<end and start<j:
