@@ -10,7 +10,5 @@ class Solution:
                 return
             for _ in range(ind,len(candidates)):
                 combi(s+candidates[_],path+[candidates[_]],_)
-            
-            
         combi(0,[],0)  #sum,path,index
         return ans
