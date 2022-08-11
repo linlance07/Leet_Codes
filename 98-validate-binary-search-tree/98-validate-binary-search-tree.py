@@ -14,8 +14,7 @@ class Solution:
                 ans.append(temp.val)
                 inorder(temp.right)
         inorder(root)
-        return ans==sorted(set(ans))
-            
+        return ans==sorted(set(ans))    
         # def valid(temp,mini,maxi):
         #     if temp==None:
         #         return True
