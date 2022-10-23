@@ -7,10 +7,6 @@ class Solution:
             while stack and stack[-1]==popped[ind]:
                 stack.pop()
                 ind += 1
-        while stack:
-            while stack and stack[-1]==popped[ind]:
-                stack.pop()
-                ind += 1
-            else:
-                return False
+        if stack:
+            return False
         return True
